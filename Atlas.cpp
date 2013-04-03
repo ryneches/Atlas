@@ -16,14 +16,14 @@ Atlas::~Atlas(){/*nothing to destruct*/}
 
 // read a line of data from the stamp
 String Atlas::readstamp() {
-    Serial.println( (char)_atlas.read());
     buffer = "";
-    //while( _atlas.available() > 0 and buffer.length() < BufferLength ) {
     while( _atlas.available() > 0 ) {
         inchar = (char)_atlas.read();
         buffer += inchar;
+        Serial.println( inchar );
         if( inchar == '\r' ) break;
     }
+    Serial.println( "hello" + buffer );
     return buffer;
 }
 

@@ -1,6 +1,5 @@
 #include <Atlas.h>
 #include <SoftwareSerial.h>
-#include <Serial.h>
 
 Atlas A = Atlas();
 
@@ -10,5 +9,5 @@ void loop(){
     A.on();
     A.off();
     A.on();
-    Serial.println( A.version() );
+    Serial.println( A.read(23.23) );
 }
