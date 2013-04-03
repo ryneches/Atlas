@@ -12,9 +12,11 @@ Atlas	KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 
-on	KEYWORD2
-off	KEYWORD2
-blink	KEYWORD2
+on      KEYWORD2
+off	    KEYWORD2
+single	KEYWORD2
+read    KEYWORD2
+version KEYRORD2
 
 #######################################
 # Constants (LITERAL1)

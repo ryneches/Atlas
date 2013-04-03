@@ -17,13 +17,13 @@ Atlas::~Atlas(){/*nothing to destruct*/}
 // read a line of data from the stamp
 String Atlas::readstamp() {
     buffer = "";
+    //_atlas.begin( baud );
     while( _atlas.available() > 0 ) {
+        delay(16);
         inchar = (char)_atlas.read();
         buffer += inchar;
-        Serial.println( inchar );
         if( inchar == '\r' ) break;
     }
-    Serial.println( "hello" + buffer );
     return buffer;
 }
 
@@ -39,9 +39,8 @@ void Atlas::off(){
 
 // get the version string
 String Atlas::version(){
-    flush();
-    _atlas.print( "i\r" );
-    delay(10);
+    _atlas.print( "i\r"  );
+    delay(16);
     return readstamp();    
 }
 
@@ -57,9 +56,8 @@ void Atlas::flush(){
 
 // take a temperature corrected measurement
 String Atlas::read( float temp ){
-    flush();
     _atlas.print( temp );
     _atlas.print( "\r" );
-    delay(100);
+    delay(16);
     return readstamp();
 }
