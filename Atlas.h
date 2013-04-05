@@ -4,8 +4,8 @@
 #include "Arduino.h"
 #include "SoftwareSerial.h"
 
-#define rxPin 3
-#define txPin 2
+#define rxPin 2
+#define txPin 3
 #define baud 38400
 
 #define BufferLength 128
