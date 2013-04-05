@@ -3,11 +3,17 @@
 
 Atlas A = Atlas();
 
-void setup(){}
+void setup(){
+    Serial.begin( 9600 );
+    A.single();
+    A.on();
+    delay(1000);
+    A.off();
+    delay(1000);
+    A.on();
+}
 
 void loop(){
-    A.on();
-    A.off();
-    A.on();
-    Serial.println( A.read(23.23) );
+    Serial.println( A.read(23.32) );
+    delay(1000);
 }
