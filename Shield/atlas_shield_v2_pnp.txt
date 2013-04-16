@@ -1,0 +1,52 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=atlas_shield_v2
+*Date=01:13:59
+*CreatedBy=Fritzing 0.7.12b.02.13.6882
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;;34.5618;-61.7336;0;Bottom;TXT5
+2;;THT;25.2484;-61.2163;180;Bottom;J5
+3;;THT;10.1755;-9.40038;90;Bottom;J9
+4;;;26.5184;-27.5779;90;Bottom;Arduino1
+5;;THT;40.6554;-9.40038;90;Bottom;J12
+6;;;18.6162;-58.6057;0;Bottom;TXT4
+7;;THT;25.2484;-25.6563;180;Bottom;J1
+8;;;36.9607;-16.3429;0;Bottom;TXT5
+9;;;5.02243;-64.6501;-90;Bottom;TXT3
+10;;;18.7338;-27.7258;0;Bottom;TXT4
+11;;;17.111;-16.578;0;Bottom;TXT5
+12;;;40.4884;-48.5164;0;Bottom;Via1
+13;;;6.08076;-16.6486;0;Bottom;TXT5
+14;;;10.9491;-60.9812;0;Bottom;TXT5
+15;;;26.8712;-16.4369;0;Bottom;TXT5
+16;;THT;7.46845;-61.2163;180;Bottom;J6
+17;;;47.497;-36.9923;-90;Bottom;TXT1
+18;;;39.2187;-22.3049;0;Bottom;IMG1
+19;;;11.6078;-43.3186;0;Bottom;TXT5
+20;;;27.7884;-48.5164;0;Bottom;Via4
+21;;THT;7.46845;-25.6563;180;Bottom;J2
+22;;DIP (Dual Inline) [THT];39.2184;-37.0863;0;Bottom;MUX
+23;;;40.9118;-59.9934;0;Bottom;TXT4
+24;;;11.6546;-25.468;0;Bottom;TXT5
+25;;;18.6868;-45.6235;0;Bottom;TXT4
+26;;THT;7.46845;-43.4363;180;Bottom;J4
+27;;;18.5927;-23.1163;0;Bottom;TXT4
+28;;;40.4884;-53.5964;0;Bottom;Via3
+29;;THT;48.1084;-61.2163;180;Bottom;J7
+30;;THT;25.2484;-43.4363;180;Bottom;J3
+31;;;18.7103;-41.0374;0;Bottom;TXT4
+32;;;18.8279;-63.4269;0;Bottom;TXT4
+33;;;2.76885;-55.0948;-90;Bottom;TXT2
+34;;THT;20.3354;-9.40038;90;Bottom;J10
+35;;THT;30.3284;-61.2163;180;Bottom;J8
+36;;;40.9118;-63.1918;0;Bottom;TXT4
+37;;THT;30.4954;-9.40038;90;Bottom;J11
