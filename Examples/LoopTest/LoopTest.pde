@@ -4,6 +4,10 @@ AltSoftSerial s;
 int m = 0;
 
 void init_stamp() {
+  // pause in case there's any ringing in the circuit
+  delay(8);
+  // toss out any extra stuff in the buffer
+  while( s.available() ) s.read();
   // blink four times
   for( int j = 0; j < 5; j++ ) { 
     s.print( "l0\r" );
@@ -13,12 +17,12 @@ void init_stamp() {
   }
   // enter quiecent mode
   s.print( "e\r" );
+  delay(100);
 }
 
 void off_stamp() {
   // turn off LED
   s.print( "l0\r" );
-  delay(10);
 }
 
 void select( int i ) {
@@ -41,7 +45,6 @@ void select( int i ) {
       analogWrite(  3, 255  );
       break;
   }
-  delay(16);
   init_stamp();
 }
 
@@ -59,7 +62,6 @@ void setup() {
 
 void loop() {
   select( m );
-  delay(1000);
   Serial.print( String(m) + " : " );
   char c = 0;
   String buffer = "";
