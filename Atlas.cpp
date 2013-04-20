@@ -3,7 +3,7 @@
 AltSoftSerial _atlas;
 String buffer = "";
 char c = 0;
-mux_port = 0;
+int mux_port = 0;
 
 // Constructor
 Atlas::Atlas(){
@@ -16,8 +16,8 @@ Atlas::Atlas(){
 Atlas::~Atlas(){/*nothing to destruct*/}
 
 // select a port on the MUX
-void select( int i ) {
-    off( mux_port );
+void Atlas::select( int i ) {
+    off();
     switch( i ) {
         case 0:
             digitalWrite( muxPin1, LOW  );
@@ -40,12 +40,12 @@ void select( int i ) {
     // pause in case there's any ringing in the circuit
     delay(8);
     // toss out any extra stuff in the buffer
-    while( s.available() ) s.read();
+    while( _atlas.available() ) _atlas.read();
     // blink four times
     for( int j = 0; j < 5; j++ ) { 
-        off( mux_port );
+        off();
         delay(50);
-        on( mux_port );
+        on();
         delay(50);
     }
     // enter quiecent mode
@@ -54,21 +54,19 @@ void select( int i ) {
 }
 
 // query the stamp and then read a line of data
-String Atlas::querystamp( String query ) {
-    select( m );
+String Atlas::querystamp( int port, String query ) {
+    select( port );
     char c = 0;
     buffer = "";
-    s.print( query );
+    _atlas.print( query );
     delay( 1000 );
-    while( _atlat.available() ) {
+    while( _atlas.available() ) {
         c = _atlas.read();
         buffer += c;
         if( c == '\r' ) {
             break;
         }
     }
-    m++;
-    if ( m == 4 ) m = 0;  
     return buffer;
 }
 
@@ -83,12 +81,12 @@ void Atlas::off(){
 }
 
 // get the version string
-String Atlas::version(){
-    return querystamp( "i\r" );    
+String Atlas::version( int port ){
+    select( port );
+    return querystamp( port, "i\r" );    
 }
 
 // take a temperature corrected measurement
 String Atlas::read( int port, float temp ){
-    select( port );
-    return querystamp( temp );
+    return querystamp( port, String((long)temp) );
 }

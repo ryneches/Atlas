@@ -3,7 +3,9 @@ Scientific embedded sensor circuits.
 
     https://www.atlas-scientific.com/
 
-See example for usage.
+This library is intended to be used with the Atlas Shield, a
+multiplexer board based on the 
+
 
 === Inspirational Quote ===
 
