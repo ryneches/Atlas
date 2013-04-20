@@ -1,8 +1,6 @@
 Atlas is an Arduino library for controlling and querying [Atlas
 Scientific](https://www.atlas-scientific.com/) embedded sensor
-circuits.
-
-This library is intended to be used with the Atlas Shield, a
+circuits. This library is intended to be used with the Atlas Shield, a
 multiplexer board based on the 74HC4052 serial multiplexer chip. The
 shield has four ports for four sensor circuits.
 
@@ -14,8 +12,7 @@ SVG files.
 
 You will need to install AltSoftSerial, which can be found here :
 
-    [http://www.pjrc.com/teensy/td_libs_AltSoftSerial.html]
-    (http://www.pjrc.com/teensy/td_libs_AltSoftSerial.html)
+    [http://www.pjrc.com/teensy/td_libs_AltSoftSerial.html](http://www.pjrc.com/teensy/td_libs_AltSoftSerial.html)
 
 Please note that AltSoftSerial does not let you choose RX and TX pins.
 On the Uno and related boads, TX is on pin 9, RX is on pin 8, and
