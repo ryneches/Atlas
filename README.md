@@ -1,3 +1,5 @@
+![Atlas Shield](/Shield/atlas_shield_v2_pcb_small.png)
+
 Atlas is an Arduino library for controlling and querying [Atlas
 Scientific](https://www.atlas-scientific.com/) embedded sensor
 circuits. This library is intended to be used with the Atlas Shield, a
