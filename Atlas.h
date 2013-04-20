@@ -9,7 +9,10 @@
 
 #define baud 38400
 
-#define BufferLength 128
+#define PORT0 0
+#define PORT1 1
+#define PORT2 2
+#define PORT3 3
 
 class Atlas { 
 public :
