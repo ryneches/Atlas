@@ -1,0 +1,27 @@
+Bill of Materials: Atlas Shield v2
+
+Assembly List
+
+ Label              Part Type                                                                           Properties
+Arduino1 Arduino                         processor ATmega; variant Arduino UNO R3
+J1       Generic female header - 3 pins  package THT; hole size 1.0mm,0.508mm; row single; form ♀ (female); pins 3; pin spacing 0.1in (2.54mm)
+J2       Generic female header - 3 pins  package THT; hole size 1.0mm,0.508mm; row single; form ♀ (female); pins 3; pin spacing 0.1in (2.54mm)
+J3       Generic female header - 3 pins  package THT; hole size 1.0mm,0.508mm; row single; form ♀ (female); pins 3; pin spacing 0.1in (2.54mm)
+J4       Generic female header - 3 pins  package THT; hole size 1.0mm,0.508mm; row single; form ♀ (female); pins 3; pin spacing 0.1in (2.54mm)
+J5       Generic female header - 3 pins  package THT; hole size 1.0mm,0.508mm; row single; form ♀ (female); pins 3; pin spacing 0.1in (2.54mm)
+J6       Generic female header - 3 pins  package THT; hole size 1.0mm,0.508mm; row single; form ♀ (female); pins 3; pin spacing 0.1in (2.54mm)
+J7       Generic female header - 3 pins  package THT; hole size 1.0mm,0.508mm; row single; form ♀ (female); pins 3; pin spacing 0.1in (2.54mm)
+J8       Generic female header - 3 pins  package THT; hole size 1.0mm,0.508mm; row single; form ♀ (female); pins 3; pin spacing 0.1in (2.54mm)
+J9       Screw terminal - 2 pins         package THT; hole size 1.0mm,0.508mm; pins 2; pin spacing 0.197in (5.0mm)
+J10      Screw terminal - 2 pins         package THT; hole size 1.0mm,0.508mm; pins 2; pin spacing 0.197in (5.0mm)
+J11      Screw terminal - 2 pins         package THT; hole size 1.0mm,0.508mm; pins 2; pin spacing 0.197in (5.0mm)
+J12      Screw terminal - 2 pins         package THT; hole size 1.0mm,0.508mm; pins 2; pin spacing 0.197in (5.0mm)
+MUX      DIP - 16 pins                   package DIP (Dual Inline) [THT]; hole size 1.0mm,0.508mm; true; chip label 74HC4052; pins 16; pin spacing 300mil; part # 74HC4052
+
+Shopping List
+
+Amount            Part Type                                                                            Properties
+1      Arduino                          processor ATmega; variant Arduino UNO R3
+8      Generic female header - 3 pins   package THT; hole size 1.0mm,0.508mm; row single; form ♀ (female); pins 3; pin spacing 0.1in (2.54mm)
+4      Screw terminal - 2 pins          package THT; hole size 1.0mm,0.508mm; pins 2; pin spacing 0.197in (5.0mm)
+1      DIP - 16 pins                    package DIP (Dual Inline) [THT]; hole size 1.0mm,0.508mm; true; chip label 74HC4052; pins 16; pin spacing 300mil; part # 74HC4052
