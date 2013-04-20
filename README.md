@@ -1,7 +1,6 @@
-Atlas is an Arduino library for controlling and querying Atlas
-Scientific embedded sensor circuits.
-
-    https://www.atlas-scientific.com/
+Atlas is an Arduino library for controlling and querying [Atlas
+Scientific](https://www.atlas-scientific.com/) embedded sensor
+circuits.
 
 This library is intended to be used with the Atlas Shield, a
 multiplexer board based on the 74HC4052 serial multiplexer chip. The
@@ -15,7 +14,8 @@ SVG files.
 
 You will need to install AltSoftSerial, which can be found here :
 
-    http://www.pjrc.com/teensy/td_libs_AltSoftSerial.html
+    [http://www.pjrc.com/teensy/td_libs_AltSoftSerial.html]
+    (http://www.pjrc.com/teensy/td_libs_AltSoftSerial.html)
 
 Please note that AltSoftSerial does not let you choose RX and TX pins.
 On the Uno and related boads, TX is on pin 9, RX is on pin 8, and
@@ -50,7 +50,7 @@ is basically the whole interface :
     }
 
 
-# Use with and without a Multiplexer Shield ===
+# Use with and without a Multiplexer Shield
 
 By default, the Atlas library assumes you are using a 74HC4052-based
 multiplexer shield. You can also make your own multiplexer with a bare
@@ -83,17 +83,15 @@ from compiling. This should result in a more compact binary.
     }
 
 
-# Inspirational Quote ===
+# Inspirational Quote
 
 A big leather-bound volume makes an ideal razor strap. A thin book is
 useful to stick under a table with a broken caster to steady it. A
 large, flat atlas can be used to cover a window with a broken pane.
 And a thick, old-fashioned heavy book with a clasp is the finest thing
-in the world to throw at a noisy cat.
+in the world to throw at a noisy cat. -- Mark Twain
 
-    -- Mark Twain
-
-# Legal Stuff ===
+# Legal Stuff
 
 Copyright (c) 2013, Russell Neches
 All rights reserved.
@@ -102,18 +100,18 @@ Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:
 
-    * Redistributions of source code must retain the above copyright 
-      notice, this list of conditions and the following disclaimer.
+* Redistributions of source code must retain the above copyright 
+  notice, this list of conditions and the following disclaimer.
 
-    * Redistributions in binary form must reproduce the above
-      copyright notice, this list of conditions and the following
-      disclaimer in the documentation and/or other materials provided
-      with the distribution.
+* Redistributions in binary form must reproduce the above
+  copyright notice, this list of conditions and the following
+  disclaimer in the documentation and/or other materials provided with
+  the distribution.
 
-    * Neither the name of the University of California, Davis nor the 
-      names of its contributors may be used to endorse or promote 
-      products derived from this software without specific prior 
-      written permission.
+* Neither the name of the University of California, Davis nor the 
+  names of its contributors may be used to endorse or promote
+  products derived from this software without specific prior written
+  permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
