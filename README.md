@@ -1,3 +1,5 @@
+# The Atlas Arduino Library
+
 Atlas is an Arduino library for controlling and querying [Atlas
 Scientific](https://www.atlas-scientific.com/) embedded sensor
 circuits. This library is intended to be used with the Atlas Shield, a
@@ -10,7 +12,7 @@ SVG files.
 
 ![Atlas Shield](/Shield/atlas_shield_v2_pcb_small.png)
 
-# Requirements
+## Requirements
 
 You will need to install AltSoftSerial, which can be found here : [http://www.pjrc.com/teensy/td_libs_AltSoftSerial.html](http://www.pjrc.com/teensy/td_libs_AltSoftSerial.html)
 
@@ -18,7 +20,7 @@ Please note that AltSoftSerial does not let you choose RX and TX pins.
 On the Uno and related boads, TX is on pin 9, RX is on pin 8, and
 pulse width modulation will be disabled on pin 10.
 
-# Usage
+## Usage
 
 This library is intended as a high-level interface, and does not
 provide access to every feature of the sensor circuits. This example
@@ -47,7 +49,7 @@ is basically the whole interface :
     }
 
 
-# Use with and without a Multiplexer Shield
+## Use with and without a Multiplexer Shield
 
 By default, the Atlas library assumes you are using a 74HC4052-based
 multiplexer shield. You can also make your own multiplexer with a bare
@@ -80,7 +82,7 @@ from compiling. This should result in a more compact binary.
     }
 
 
-# Inspirational Quote
+## Inspirational Quote
 
 A big leather-bound volume makes an ideal razor strap. A thin book is
 useful to stick under a table with a broken caster to steady it. A
@@ -88,7 +90,7 @@ large, flat atlas can be used to cover a window with a broken pane.
 And a thick, old-fashioned heavy book with a clasp is the finest thing
 in the world to throw at a noisy cat. -- Mark Twain
 
-# Legal Stuff
+## Legal Stuff
 
 Copyright (c) 2013, Russell Neches
 All rights reserved.
