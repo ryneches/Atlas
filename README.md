@@ -1,0 +1,128 @@
+Atlas is an Arduino library for controlling and querying Atlas
+Scientific embedded sensor circuits.
+
+    https://www.atlas-scientific.com/
+
+This library is intended to be used with the Atlas Shield, a
+multiplexer board based on the 74HC4052 serial multiplexer chip. The
+shield has four ports for four sensor circuits.
+
+A Fritzing project for the Atlas Shield is included with this library,
+along with the exported Gerber files, etchable PDF files and etchable
+SVG files.
+
+# Requirements
+
+You will need to install AltSoftSerial, which can be found here :
+
+    http://www.pjrc.com/teensy/td_libs_AltSoftSerial.html
+
+Please note that AltSoftSerial does not let you choose RX and TX pins.
+On the Uno and related boads, TX is on pin 9, RX is on pin 8, and
+pulse width modulation will be disabled on pin 10.
+
+# Usage
+
+This library is intended as a high-level interface, and does not
+provide access to every feature of the sensor circuits. This example
+is basically the whole interface :
+
+    #include <Atlas.h>
+    #include <AltSoftSerial.h>
+    
+    Atlas A = Atlas();
+    
+    void setup() {
+      Serial.begin( 9600 );
+      // get version strings for each sensor
+      Serial.println( A.version( PORT0 ) );
+      Serial.println( A.version( PORT1 ) );
+      Serial.println( A.version( PORT2 ) );
+      Serial.println( A.version( PORT3 ) );
+    }
+    
+    void loop() {
+      // get temperature corrected readings
+      Serial.println( A.read( PORT0, 23.4 ) );
+      Serial.println( A.read( PORT1, 23.4 ) );
+      Serial.println( A.read( PORT2, 23.4 ) );
+      Serial.println( A.read( PORT3, 23.4 ) );
+    }
+
+
+# Use with and without a Multiplexer Shield ===
+
+By default, the Atlas library assumes you are using a 74HC4052-based
+multiplexer shield. You can also make your own multiplexer with a bare
+74HC4052 chip (they cost less than a dollar), or you can use the Atlas
+library with a single sensor and no multiplexer.
+
+To use the Atlas library with a single sensor, edit Atlas.h and
+comment out the line 
+
+    #define USE_MUX
+
+This will change the function definitions to exclude the PORTX
+argument, and will prevent some functions related to the multiplexer
+from compiling. This should result in a more compact binary.
+
+    #include <Atlas.h>
+    #include <AltSoftSerial.h>
+    
+    Atlas A = Atlas();
+    
+    void setup() {
+      Serial.begin( 9600 );
+      // get version strings for each sensor
+      Serial.println( A.version() );
+    }
+    
+    void loop() {
+      // get temperature corrected readings
+      Serial.println( A.read( 23.4 ) );
+    }
+
+
+# Inspirational Quote ===
+
+A big leather-bound volume makes an ideal razor strap. A thin book is
+useful to stick under a table with a broken caster to steady it. A
+large, flat atlas can be used to cover a window with a broken pane.
+And a thick, old-fashioned heavy book with a clasp is the finest thing
+in the world to throw at a noisy cat.
+
+    -- Mark Twain
+
+# Legal Stuff ===
+
+Copyright (c) 2013, Russell Neches
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+    * Redistributions of source code must retain the above copyright 
+      notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above
+      copyright notice, this list of conditions and the following
+      disclaimer in the documentation and/or other materials provided
+      with the distribution.
+
+    * Neither the name of the University of California, Davis nor the 
+      names of its contributors may be used to endorse or promote 
+      products derived from this software without specific prior 
+      written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
