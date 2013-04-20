@@ -1,12 +1,12 @@
 #######################################
-# Syntax Coloring Map For LED13
+# Syntax Coloring Map
 #######################################
 
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
 
-Atlas	KEYWORD1
+Atlas   KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -22,3 +22,7 @@ version KEYRORD2
 # Constants (LITERAL1)
 #######################################
 
+PORT0   LITERAL1
+PORT1   LITERAL1
+PORT2   LITERAL1
+PORT3   LITERAL1
