@@ -2,10 +2,11 @@
 #define ATLAS_H
 
 #include "Arduino.h"
-#include "SoftwareSerial.h"
+#include "AltSoftSerial.h"
 
-#define rxPin 2
-#define txPin 3
+#define muxPin1 2
+#define muxPin2 3
+
 #define baud 38400
 
 #define BufferLength 128
@@ -14,14 +15,13 @@ class Atlas {
 public :
 	Atlas();
 	~Atlas();
-    void on();
-	void off();
-    void single();
-    String version();
-    String read( float temp );
+    void on( int port );
+	void off( int port );
+    String version( int port );
+    String read( int port, float temp );
 private :
-    void flush();
-    String readstamp();
+    select( int i );
+    String querystamp();
 };
 
 #endif
