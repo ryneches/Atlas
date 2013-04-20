@@ -3,18 +3,26 @@
 AltSoftSerial _atlas;
 String buffer = "";
 char c = 0;
+
+#ifdef SHIELD
 int mux_port = 0;
+#endif
 
 // Constructor
 Atlas::Atlas(){
+    #ifdef SHIELD
     pinMode( muxPin1, OUTPUT );
     pinMode( muxPin2, OUTPUT );
+    #endif
+
     _atlas.begin( baud );
+
 }
 
 // Destructor
 Atlas::~Atlas(){/*nothing to destruct*/}
 
+#ifdef SHIELD
 // select a port on the MUX
 void Atlas::select( int i ) {
     off();
@@ -52,10 +60,16 @@ void Atlas::select( int i ) {
     _atlas.print( "e\r" );
     delay(100);
 }
+#endif
 
 // query the stamp and then read a line of data
+#ifdef SHIELD
 String Atlas::querystamp( int port, String query ) {
     select( port );
+#else
+String Atlas::querystamp( String query ) {
+#endif
+
     char c = 0;
     buffer = "";
     _atlas.print( query );
@@ -81,12 +95,24 @@ void Atlas::off(){
 }
 
 // get the version string
+#ifdef SHIELD
 String Atlas::version( int port ){
     select( port );
-    return querystamp( port, "i\r" );    
+    return querystamp( port, "i\r" );
 }
+#else
+String Atlas::version() {
+     return querystamp( "i\r" );
+}
+#endif
 
 // take a temperature corrected measurement
+#ifdef SHIELD
 String Atlas::read( int port, float temp ){
     return querystamp( port, String((long)temp) );
 }
+#else
+String Atlas::read( float temp ){
+    return querystamp( String((long)temp) );
+}
+#endif

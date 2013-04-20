@@ -14,17 +14,32 @@
 #define PORT2 2
 #define PORT3 3
 
-class Atlas { 
+//#define SHIELD
+
+class Atlas {
 public :
 	Atlas();
 	~Atlas();
     void on();
 	void off();
+    
+    #ifdef SHIELD
     String version( int port );
     String read( int port, float temp );
+    #else
+    String version();
+    String read( float temp );
+    #endif
+ 
 private :
+    
+    #ifdef SHIELD
     void select( int i );
     String querystamp( int port, String query );
+    #else
+    String querystamp( String query );
+    #endif
+
 };
 
 #endif
