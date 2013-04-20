@@ -5,7 +5,11 @@ Scientific embedded sensor circuits.
 
 This library is intended to be used with the Atlas Shield, a
 multiplexer board based on the 74HC4052 serial multiplexer chip. The
-shield has four ports for four sensor circuits. 
+shield has four ports for four sensor circuits.
+
+A Fritzing project for the Atlas Shield is included with this library,
+along with the exported Gerber files, etchable PDF files and etchable
+SVG files.
 
 === Requirements ===
 
