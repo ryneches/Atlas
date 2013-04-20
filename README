@@ -46,6 +46,39 @@ is basically the whole interface :
     }
 
 
+=== Use with and without a Multiplexer Shield ===
+
+By default, the Atlas library assumes you are using a 74HC4052-based
+multiplexer shield. You can also make your own multiplexer with a bare
+74HC4052 chip (they cost less than a dollar), or you can use the Atlas
+library with a single sensor and no multiplexer.
+
+To use the Atlas library with a single sensor, edit Atlas.h and
+comment out the line 
+
+    #define USE_MUX
+
+This will change the function definitions to exclude the PORTX
+argument, and will prevent some functions related to the multiplexer
+from compiling. This should result in a more compact binary.
+
+    #include <Atlas.h>
+    #include <AltSoftSerial.h>
+    
+    Atlas A = Atlas();
+    
+    void setup() {
+      Serial.begin( 9600 );
+      // get version strings for each sensor
+      Serial.println( A.version() );
+    }
+    
+    void loop() {
+      // get temperature corrected readings
+      Serial.println( A.read( 23.4 ) );
+    }
+
+
 === Inspirational Quote ===
 
 A big leather-bound volume makes an ideal razor strap. A thin book is

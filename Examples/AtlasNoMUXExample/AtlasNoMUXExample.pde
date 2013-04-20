@@ -22,6 +22,6 @@ void setup() {
 }
 
 void loop() {
- // get temperature corrected readings
- Serial.println( A.read( 23.4 ) );
+  // get temperature corrected readings
+  Serial.println( A.read( 23.4 ) );
 }

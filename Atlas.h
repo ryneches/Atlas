@@ -14,7 +14,7 @@
 #define PORT2 2
 #define PORT3 3
 
-//#define SHIELD
+#define USE_MUX
 
 class Atlas {
 public :
@@ -23,7 +23,7 @@ public :
     void on();
 	void off();
     
-    #ifdef SHIELD
+    #ifdef USE_MUX
     String version( int port );
     String read( int port, float temp );
     #else
@@ -33,7 +33,7 @@ public :
  
 private :
     
-    #ifdef SHIELD
+    #ifdef USE_MUX
     void select( int i );
     String querystamp( int port, String query );
     #else
