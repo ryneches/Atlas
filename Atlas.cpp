@@ -16,7 +16,6 @@ Atlas::Atlas(){
     #endif
 
     _atlas.begin( baud );
-
 }
 
 // Destructor
@@ -70,10 +69,11 @@ String Atlas::querystamp( int port, String query ) {
 String Atlas::querystamp( String query ) {
 #endif
 
+    Serial.println( "query : " + query );
     char c = 0;
     buffer = "";
     _atlas.print( query );
-    delay( 1000 );
+    delay( 1200 );
     while( _atlas.available() ) {
         c = _atlas.read();
         buffer += c;
@@ -98,21 +98,21 @@ void Atlas::off(){
 #ifdef USE_MUX
 String Atlas::version( int port ){
     select( port );
-    return querystamp( port, "i\r" );
+    return querystamp( port, String("i\r") );
 }
 #else
 String Atlas::version() {
-     return querystamp( "i\r" );
+     return querystamp( String("i\r") );
 }
 #endif
 
 // take a temperature corrected measurement
 #ifdef USE_MUX
-String Atlas::read( int port, float temp ){
-    return querystamp( port, String((long)temp) );
+String Atlas::read( int port, long temp ){
+    return querystamp( port, String(temp) );
 }
 #else
-String Atlas::read( float temp ){
-    return querystamp( String((long)temp) );
+String Atlas::read( long temp ){
+    return querystamp( String(temp) );
 }
 #endif

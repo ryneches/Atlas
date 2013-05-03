@@ -25,10 +25,10 @@ public :
     
     #ifdef USE_MUX
     String version( int port );
-    String read( int port, float temp );
+    String read( int port, long temp );
     #else
     String version();
-    String read( float temp );
+    String read( long temp );
     #endif
  
 private :
